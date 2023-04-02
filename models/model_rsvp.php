@@ -1,6 +1,7 @@
 <?php
 
-function get_all_rsvp() {
+function get_all_rsvp()
+{
     global $wpdb;
     $table_name = $wpdb->prefix . 'rsvp';
     $sql = "SELECT * FROM " . $table_name;
@@ -9,7 +10,8 @@ function get_all_rsvp() {
     return $query;
 }
 
-function get_all_rsvp_by_postid($id) {
+function get_all_rsvp_by_postid($id)
+{
     global $wpdb;
     $table_name = $wpdb->prefix . 'rsvp';
     $sql = "SELECT * FROM " . $table_name . " WHERE post_id=" . $id;
@@ -18,7 +20,20 @@ function get_all_rsvp_by_postid($id) {
     return $query;
 }
 
-function post_rsvp($data) {
+function post_rsvp()
+{
+    $post_id = get_the_ID();
+    $nama = isset($_POST['nama']) ? $_POST['nama'] : '';
+    $kehadiran = isset($_POST['kehadiran']) ? $_POST['kehadiran'] : '';
+    $ucapan = isset($_POST['ucapan']) ? $_POST['ucapan'] : '';
+
+    $data = array(
+        'post_id' => $post_id,
+        'nama' => $nama,
+        'kehadiran' => $kehadiran,
+        'ucapan' => $ucapan
+    );
+
     global $wpdb;
     $table = $wpdb->prefix . 'rsvp';
     $wpdb->insert($table, $data);
@@ -26,18 +41,18 @@ function post_rsvp($data) {
     return $my_id;
 }
 
-function put_rsvp() {
+function put_rsvp()
+{
     $table = $wpdb->prefix . 'rsvp';
 
     $updated = $wpdb->update($table, $data, $where);
     return $updated;
 }
 
-function delete_rsvp() {
+function delete_rsvp()
+{
     $table = $wpdb->prefix . 'rsvp';
 
     $deleted = $wpdb->delete($table, $where);
     return $deleted;
 }
-
-
