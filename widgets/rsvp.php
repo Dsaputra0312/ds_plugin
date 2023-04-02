@@ -75,6 +75,20 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 			]
 		);
 
+		$this->add_control(
+			'rsvp_image',
+			[
+				'label' => esc_html__('Choose Image', 'elementor'),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'dynamic' => [
+					'active' => true,
+				],
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		// Tab Style
@@ -196,6 +210,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 		$settings = $this->get_settings_for_display();
 		wp_enqueue_style('bootstrap_5');
 		wp_enqueue_script('bootstrap_5');
+		$image_rsvp = $settings['rsvp_image'];
 
 		if ($settings['card_style'] == '1'): ?>
 			<?php $post_id = get_the_ID(); ?>
@@ -205,8 +220,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 					<div class="mb-3">
 						<div class="rsvp row flex-nowrap">
 							<div class="col-1 text-center pt-2">
-								<img src="<?php bloginfo("url"); ?>/wp-content/plugins/DS_plugin/assets/comment.png" alt="Cinque Terre"
-									class="d-inline">
+								<img src="<?= $image_rsvp['url'] ?>" class="d-inline">
 							</div>
 
 							<div class="message-wish col-11 p-3 shadow-sm position-relative" style="border-radius: 16px;">

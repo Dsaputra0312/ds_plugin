@@ -136,16 +136,36 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
         );
 
         $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'form_background',
+                'types' => ['classic', 'gradient'],
+                'exclude' => ['image'],
+                'selector' => '{{WRAPPER}} .container-form .form-control',
+                'fields_options' => [
+                    'background' => [
+                        'default' => 'classic',
+                    ],
+                    'color' => [
+                        'global' => [
+                            'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_ACCENT,
+                        ],
+                    ],
+                ],
+            ]
+        );
+
+        $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
             [
-                'name' => 'border',
+                'name' => 'border-form',
                 'selector' => '{{WRAPPER}} .container-form .form-control',
                 'separator' => 'before',
             ]
         );
 
         $this->add_responsive_control(
-            'border_radius',
+            'border_radius_form',
             [
                 'label' => esc_html__('Border Radius', 'elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -160,13 +180,13 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
         $this->add_group_control(
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
-                'name' => 'button_box_shadow',
+                'name' => 'form_box_shadow',
                 'selector' => '{{WRAPPER}} .container-form .form-control',
             ]
         );
 
         $this->add_responsive_control(
-            'text_padding',
+            'form_text_padding',
             [
                 'label' => esc_html__('Padding', 'elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -203,7 +223,7 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(),
             [
-                'name' => 'background',
+                'name' => 'button_background',
                 'types' => ['classic', 'gradient'],
                 'exclude' => ['image'],
                 'selector' => '{{WRAPPER}} #btn-form',
@@ -223,14 +243,14 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
             [
-                'name' => 'border',
+                'name' => 'border-btn',
                 'selector' => '{{WRAPPER}} #btn-form',
                 'separator' => 'before',
             ]
         );
 
         $this->add_responsive_control(
-            'border_radius',
+            'button_border_radius',
             [
                 'label' => esc_html__('Border Radius', 'elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -251,7 +271,7 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
         );
 
         $this->add_responsive_control(
-            'text_padding',
+            'button_text_padding',
             [
                 'label' => esc_html__('Padding', 'elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -285,12 +305,11 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
 
         post_rsvp();
 
-        $settings = $this->get_settings_for_display();
         if ($settings['card_style'] == '1'): ?>
             <div class="container-form">
                 <form method="POST" action="">
                     <div class="form-group mb-3">
-                        <input type="text" class="form-control" name="nama" placeholder="Nama">
+                        <input type="text" class="form-control" name="nama" placeholder="Nama" required>
                     </div>
                     <div class="form-group mb-3">
                         <div class="form-check">

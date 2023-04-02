@@ -34,11 +34,18 @@ function post_rsvp()
         'ucapan' => $ucapan
     );
 
-    global $wpdb;
-    $table = $wpdb->prefix . 'rsvp';
-    $wpdb->insert($table, $data);
-    $my_id = $wpdb->insert_id;
-    return $my_id;
+    if ($nama != '') {
+        try {
+            global $wpdb;
+            $table = $wpdb->prefix . 'rsvp';
+            $wpdb->insert($table, $data);
+            $my_id = $wpdb->insert_id;
+            return $my_id;
+        } catch (Exception $e) {
+            echo 'Message: ' . $e->getMessage();
+        }
+    }
+
 }
 
 function put_rsvp()
