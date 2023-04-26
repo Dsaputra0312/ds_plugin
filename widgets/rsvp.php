@@ -209,6 +209,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 		wp_enqueue_style('bootstrap_5');
+		wp_enqueue_style('custom_style');
 		wp_enqueue_script('bootstrap_5');
 		$image_rsvp = $settings['rsvp_image'];
 
@@ -219,11 +220,11 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 				<div class="container">
 					<div class="mb-3">
 						<div class="rsvp row flex-nowrap">
-							<div class="col-1 text-center pt-2">
+							<div class="col-auto text-center pt-2 img-rsvp">
 								<img src="<?= $image_rsvp['url'] ?>" class="d-inline">
 							</div>
 
-							<div class="message-wish col-11 p-3 shadow-sm position-relative" style="border-radius: 16px;">
+							<div class="message-wish col-auto p-3 shadow-sm position-relative" style="border-radius: 16px;">
 								<div class="arrow-left" style="
 									border-right:7px solid;
 									width: 0;
