@@ -12,3 +12,8 @@
         max-height: 30px;
     }
 }
+
+.img-rsvp img{
+    max-width: 60px;
+    max-height: 60px;
+}
