@@ -13,6 +13,11 @@
     }
 }
 
+.img-rsvp img{
+    max-width: 60px;
+    max-height: 60px;
+}
+
 /* Widget Copy Text */
 #iconCopyText {
     cursor: pointer;
