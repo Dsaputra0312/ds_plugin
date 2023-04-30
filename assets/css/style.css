@@ -1,9 +1,9 @@
 /* Widget Music Player */
-.player_music img {
+/* .player_music img {
     width: 30px;
     max-height: 30px;
     cursor: pointer;
-}
+} */
 
 /* Widget RSVP */
 @media(max-width:574px) {
@@ -11,4 +11,9 @@
         max-width: 30px;
         max-height: 30px;
     }
+}
+
+/* Widget Copy Text */
+#iconCopyText {
+    cursor: pointer;
 }

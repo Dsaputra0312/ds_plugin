@@ -14,3 +14,12 @@ $('#pause').on('click', function() {
     $('#pause').hide();
     audio.pause();
 });
+
+// Widget Copy Text
+$('#iconCopyText').on('click', function() {
+	var temp = $("<input>");
+    $("body").append(temp);
+    temp.val($.trim($('#textCopyText').text())).select();
+    document.execCommand("copy");
+    temp.remove();
+});
