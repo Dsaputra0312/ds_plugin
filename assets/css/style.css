@@ -6,12 +6,12 @@
 } */
 
 /* Widget RSVP */
-@media(max-width:574px) {
+/* @media(max-width:574px) {
     .img-rsvp img{
         max-width: 30px;
         max-height: 30px;
     }
-}
+} */
 
 .img-rsvp img{
     max-width: 60px;

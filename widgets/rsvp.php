@@ -89,6 +89,16 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 			]
 		);
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Image_Size::get_type(),
+			[
+				'name' => 'image',
+				// Usage: `{name}_size` and `{name}_custom_dimension`, in this case `image_size` and `image_custom_dimension`.
+				'default' => 'large',
+				'separator' => 'none',
+			]
+		);
+
 		$this->end_controls_section();
 
 		// Tab Style
@@ -194,6 +204,52 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'style_image',
+			[
+				'label' => esc_html__('Image', 'textdomain'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'width',
+			[
+				'label' => esc_html__('Width', 'elementor'),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'default' => [
+					'unit' => 'PX',
+					'size' => '64'
+				],
+				'tablet_default' => [
+					'unit' => 'PX',
+				],
+				'mobile_default' => [
+					'unit' => 'PX',
+				],
+				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
+				'range' => [
+					'%' => [
+						'min' => 1,
+						'max' => 100,
+					],
+					'px' => [
+						'min' => 1,
+						'max' => 1000,
+					],
+					'vw' => [
+						'min' => 1,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+
+		$this->end_controls_section();
 	}
 
 	/**
