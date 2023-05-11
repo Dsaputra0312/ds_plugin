@@ -280,7 +280,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 								<img src="<?= $image_rsvp['url'] ?>" class="d-inline">
 							</div>
 
-							<div class="message-wish col-auto p-3 shadow-sm position-relative" style="border-radius: 16px;">
+							<div class="message-wish col-auto p-3 shadow-sm position-relative" style="border-radius: 16px; flex:2;">
 								<div class="arrow-left" style="
 									border-right:7px solid;
 									width: 0;
@@ -290,6 +290,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base
 									position: absolute;
 									left: -6px;
 									top: 16px;
+									fle
 								"></div>
 								<div class="d-flex flex-row align-items-center">
 									<div class="nama">

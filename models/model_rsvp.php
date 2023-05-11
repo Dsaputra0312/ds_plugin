@@ -56,10 +56,10 @@ function put_rsvp()
     return $updated;
 }
 
-function delete_rsvp()
+function delete_rsvp($id)
 {
+    global $wpdb;
     $table = $wpdb->prefix . 'rsvp';
-
-    $deleted = $wpdb->delete($table, $where);
+    $deleted = $wpdb->delete($table, array('id' => $id), '');
     return $deleted;
 }

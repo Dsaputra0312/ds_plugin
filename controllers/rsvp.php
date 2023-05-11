@@ -2,6 +2,10 @@
 // Menu list data rsvp di admin dashboard
 function data_rsvp()
 {
+    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    if (isset($id)) {
+        delete_rsvp($id);
+    }
     $data_rsvp = get_all_rsvp();
     include TEMP_DIR_VIEWS . 'rsvp/index.php';
 }
