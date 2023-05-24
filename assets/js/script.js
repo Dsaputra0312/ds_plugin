@@ -3,6 +3,13 @@ $(document).ready(function () {
     $('#play').show();
     $('#pause').hide();
 });
+
+$('#bukaUndangan').on('click', function() {
+    $('#play').hide();
+    $('#pause').show();
+    audio.play();
+});
+
 $('#play').on('click', function() {
     $('#play').hide();
     $('#pause').show();
@@ -16,10 +23,10 @@ $('#pause').on('click', function() {
 });
 
 // Widget Copy Text
-$('#iconCopyText').on('click', function() {
+$('.iconCopyText').on('click', function() {
 	var temp = $("<input>");
-    $("body").append(temp);
-    temp.val($.trim($('#textCopyText').text())).select();
+    $(this).parent().append(temp);
+    temp.val($.trim($(this).parent().text())).select();
     document.execCommand("copy");
     temp.remove();
 });

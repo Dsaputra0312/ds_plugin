@@ -6,7 +6,7 @@
  * Description: Percobaan plugin
  * Plugin URI: https://dicky.com
  * Author: Dicky Saputra
- * Version: 1.4
+ * Version: 1.5
  * Author URI: #
  */
 

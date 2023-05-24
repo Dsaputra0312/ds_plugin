@@ -189,10 +189,10 @@ class Copy_Text extends \Elementor\Widget_Base
         ?>
 
         <div class="row align-items-center">
-            <span id="textCopyText" style="width:auto;">
+            <span class="textCopyText" style="width:auto;">
                 <?= $settings['title_text'] ?>
             </span>
-            <img src="<?= $icon ?>" id="iconCopyText"></img>
+            <img src="<?= $icon ?>" class="iconCopyText"></img>
         </div>
         <?php
     }
