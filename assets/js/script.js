@@ -18,10 +18,12 @@ $('#pause').on('click', function() {
 
 // Widget Copy Text
 $('.iconCopyText').on('click', function() {
-	var temp = $("<input>");
-    $(this).parent().append(temp);
-    temp.val($.trim($(this).parent().text())).select();
+    var TempText = document.createElement("input");
+    TempText.value = $.trim($(this).parent().children('span').text());
+    document.body.appendChild(TempText);
+    TempText.select();
     document.execCommand("copy");
-    temp.remove();
-    alert('Berhasil Salin.');
+    document.body.removeChild(TempText);
+    
+    alert("Copied the text: " + TempText.value);
 });
