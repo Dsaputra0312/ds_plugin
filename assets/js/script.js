@@ -4,12 +4,6 @@ $(document).ready(function () {
     $('#pause').hide();
 });
 
-$('#bukaUndangan').on('click', function() {
-    $('#play').hide();
-    $('#pause').show();
-    audio.play();
-});
-
 $('#play').on('click', function() {
     $('#play').hide();
     $('#pause').show();
@@ -29,4 +23,5 @@ $('.iconCopyText').on('click', function() {
     temp.val($.trim($(this).parent().text())).select();
     document.execCommand("copy");
     temp.remove();
+    alert('Berhasil Salin.')
 });
