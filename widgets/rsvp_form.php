@@ -299,10 +299,6 @@ class Widget_Form_RSVP extends \Elementor\Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        wp_enqueue_style('bootstrap_5');
-        wp_enqueue_style('custom_style');
-        wp_enqueue_script('bootstrap_5');
-
         post_rsvp();
 
         if ($settings['card_style'] == '1'): ?>

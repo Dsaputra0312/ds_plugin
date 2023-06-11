@@ -182,9 +182,6 @@ class Copy_Text extends \Elementor\Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        wp_enqueue_style('custom_style');
-        wp_enqueue_script('jquery_3.6.4');
-        wp_enqueue_script('custom_script');
         $icon = $settings['selected_icon']['url'];
         ?>
 

@@ -163,9 +163,6 @@ class Music_Player extends \Elementor\Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        wp_enqueue_style('custom_style');
-        wp_enqueue_script('jquery_3.6.4');
-        wp_enqueue_script('custom_script');
         $play_image = $settings['play_image'];
         $pause_image = $settings['pause_image'];
         $music_url = $settings['link_music']['url'];

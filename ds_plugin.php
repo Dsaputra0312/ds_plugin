@@ -6,7 +6,7 @@
  * Description: Percobaan plugin
  * Plugin URI: https://dicky.com
  * Author: Dicky Saputra
- * Version: 1.6
+ * Version: 1.8
  * Author URI: #
  */
 
@@ -36,9 +36,12 @@ function my_plugin_assets()
     wp_register_style('bootstrap_5', '//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
     wp_register_style('custom_style', plugins_url('assets/css/style.css', __FILE__));
     wp_register_script('bootstrap_5', '//cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js');
-    wp_register_script('jquery_3.6.4', '//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js', '', '', true);
+    wp_register_script('jquery_364', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js', '', '', false);
     wp_register_script('custom_script', plugins_url('assets/js/script.js', __FILE__), '', '', true);
 
     wp_enqueue_style('bootstrap_5');
+    wp_enqueue_style('custom_style');
     wp_enqueue_script('bootstrap_5');
+    wp_enqueue_script('jquery_364');
+    wp_enqueue_script('custom_script');
 }
