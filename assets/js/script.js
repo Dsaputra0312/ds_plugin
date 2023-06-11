@@ -23,5 +23,5 @@ $('.iconCopyText').on('click', function() {
     temp.val($.trim($(this).parent().text())).select();
     document.execCommand("copy");
     temp.remove();
-    alert('Berhasil Salin.')
+    alert('Berhasil Salin.');
 });
